@@ -5,12 +5,11 @@ import boto3
 from pprint import pprint 
 
 s3 = boto3.resource('s3')
-
+config_file_location = 'C:/Users/sujee/Desktop/Keys/Twitter/tweet_config.json'
 ## Downloading file from S3 and placing in a location
-s3.meta.client.download_file('pintu-s3', 'Keys/Twitter/tweet_config.json', 'C:/Users/sujee/Desktop/Keys/Twitter/tweet_config.json')
+s3.meta.client.download_file('pintu-s3', 'Keys/Twitter/tweet_config.json', config_file_location)
 
 ##Reading the login credentials that we have placed in a json file
-config_file_location = 'C:/Users/sujee/Desktop/Keys/Twitter/tweet_config.json'
 with open(config_file_location) as login_data:
     content = json.load(login_data)
 
