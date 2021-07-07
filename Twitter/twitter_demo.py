@@ -41,4 +41,3 @@ print(user.screen_name)
 print(user.followers_count)
 
 
-## Next Up we will read the config file from S3 bucket
