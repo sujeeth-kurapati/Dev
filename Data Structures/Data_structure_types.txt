@@ -1,0 +1,11 @@
+As part of DAta Structures. I am trying to implement the following Data as part of my learning process.
+-->Linked list 
+-->Stack
+-->Queue
+-->Dequeue
+-->Advanced Linked list 
+-->Hash Table
+-->Binary Table
+-->Search Tree
+-->Heaps
+-->Graphs

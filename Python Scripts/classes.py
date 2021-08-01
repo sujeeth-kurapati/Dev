@@ -1,6 +1,3 @@
-import twitter
-
-
 class Human:
     species = 'Homosepians'
     def __init__(self,name,age):
