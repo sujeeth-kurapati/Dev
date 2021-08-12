@@ -14,6 +14,7 @@ class LinkedList:
                 node.next = Node(data=elem)
                 node = node.next
 
+# this repsent function prints all the objects in linked list as in the order they were assigned
     def __repr__(self):
         node = self.head
         nodes = []
@@ -22,6 +23,13 @@ class LinkedList:
             node = node.next
         nodes.append("None")
         return " -> ".join(nodes)
+
+# for iterating the contents in the linked list we are defining the loop
+    def __iter__(self):
+        node = self.head
+        while node is not None:
+            yield node
+            node = node.next
 
 
 class Node:
@@ -43,4 +51,5 @@ hd = LinkedList(['s','u','j','i'])
 # scnd_node.next = thrd_node
 print(hd)
 
-
+for item in hd:
+    print(item)
