@@ -1,4 +1,4 @@
-As part of DAta Structures. I am trying to implement the following Data as part of my learning process.
+As part of Data Structures. I am trying to implement the following Data as part of my learning process.
 -->Linked list 
 -->Stack
 -->Queue

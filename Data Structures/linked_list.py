@@ -25,6 +25,13 @@ class LinkedList:
             pass
         item.next = node
 
+    def add_after(self, target_node_data, new_node):
+        for node in self:
+            if node.data == target_node_data:
+                node.next = new_node
+                new_node.next = node.next
+                return
+                
 
 # this repsent function prints all the objects in linked list as in the order they were assigned
     def __repr__(self):
@@ -60,10 +67,15 @@ class Node:
 # thrd_node = Node('j')
 # head_node.next = scnd_node
 # scnd_node.next = thrd_node
+
 #Passing the node values as a list
 hd = LinkedList(['s','u','j','i'])
+
 #adding element to the begining of the linked list
 hd.add_first(Node(data='k'))
+
+hd.add_after('j',Node('f'))
+
 #adding element to the end of the linked list
 hd.add_last(Node('l'))
 # for item in hd:
