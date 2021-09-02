@@ -9,6 +9,9 @@ class Circle:
     def __init__(self, radius, color = "Blue"):
         self.radius = radius
         self.color = color
+        print(self)
+        for item in self:
+            print(item)
 
 
 class Rectangle:
@@ -26,3 +29,9 @@ class Movie:
         self.year = year
         self.language = language
         self.rating = rating
+
+
+cir = Circle(8)
+print(cir.radius)
+# for item in cir:
+#     print(item)
