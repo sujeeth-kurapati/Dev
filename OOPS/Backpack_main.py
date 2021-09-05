@@ -7,7 +7,7 @@ class Backpack:
         self.__color = color #Concept of name mangaling -- change the name of the attribute
         self.size = size
 
-    @property
+    @property # here we have implemented the concept of decorators
     def items(self):
         print("In the Getter")
         return self._items

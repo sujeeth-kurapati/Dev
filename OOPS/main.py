@@ -37,6 +37,9 @@ class Circle:
 
     color = property(get_color, set_color)
 
+    def finding_diameter(self):
+        return self._radius*2
+
 
 class Rectangle:
 
@@ -90,7 +93,8 @@ cir = Circle(8, "Red")
 print(cir.radius) #here we dont need to update the attribute syntax to call the private variables since we are implementing "property" functionality
 print(cir.color)
 cir.radius += 1
-print(cir.radius) 
+print(cir.radius)
+print(cir.finding_diameter())
 
 print(50*"*","Car Class print variables",50*"*")
 my_car = Car("Porsche", "911 Turbo S", 2021)
