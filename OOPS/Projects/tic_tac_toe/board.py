@@ -50,11 +50,6 @@ class Board:
         
     def is_winner(self, move, player):
         row, column = self.get_row_column(move)
-        print("This is for PLayer") if player._is_human else print("This is for Computer")
-        print("Column check : ", self.check_col(column, player))
-        print("Row check : ", self.check_row(row, player))
-        print("Diagonal Check : ", self.check_diagonal(player))
-        print("Anti Diagonal check : ", self.check_antidiagonal(player))
         if self.check_col(column, player) or self.check_row(row, player) or self.check_diagonal(player) or self.check_antidiagonal(player):
             return True
         else:
