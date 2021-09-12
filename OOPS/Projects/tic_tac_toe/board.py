@@ -50,6 +50,11 @@ class Board:
         
     def is_winner(self, move, player):
         row, column = self.get_row_column(move)
+        print("This is for PLayer") if player._is_human else print("This is for Computer")
+        print("Column check : ", self.check_col(column, player))
+        print("Row check : ", self.check_row(row, player))
+        print("Diagonal Check : ", self.check_diagonal(player))
+        print("Anti Diagonal check : ", self.check_antidiagonal(player))
         if self.check_col(column, player) or self.check_row(row, player) or self.check_diagonal(player) or self.check_antidiagonal(player):
             return True
         else:
@@ -82,10 +87,21 @@ class Board:
         marker = player.marker
         board_length = len(self._game_board) - 1
         for i in range(0, len(self._game_board)):
-            if str(self._game_board[i][i-board_length]) != marker:
+            if str(self._game_board[i][board_length-i]) != marker:
                 return False
         return True
 
+    def check_tie(self):
+        count = 0
+        for item_row in self._game_board:
+            if Board.EMPTY not in item_row:
+                count += 1
+        if count == len(self._game_board):
+            value = True
+        else:
+            value = False
+        return value
+              
 
 print("*****************")
 print("  Tic-Tac-Toe!")
@@ -97,12 +113,17 @@ computer = Player("O", False)
 board.print_board()
 
 while True:
+
     move = player.get_player_move()
     board.submit_move(move, player)
     board.print_board()
 
     if board.is_winner(move, player):
         print("You win!")
+        break
+
+    if board.check_tie():
+        print("The Game is a Tie. Please restart!")
         break
 
     computer_move = computer.get_player_move()
