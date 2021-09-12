@@ -18,4 +18,4 @@ def get_product(data):
  
 remove_elem(c, 3)
 print(get_product(b))
-print(a)
+print(a) 

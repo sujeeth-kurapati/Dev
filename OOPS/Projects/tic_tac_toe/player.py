@@ -1,7 +1,7 @@
 import random
 class Player:
 
-    def __inti(self, marker='X', is_human=True):
+    def __init__(self, marker="X", is_human=True):
         self._marker = marker
         self._is_human = is_human
 
@@ -13,7 +13,7 @@ class Player:
     def is_human(self):
         return self._is_human
 
-    def get_player_move(self, input_location):
+    def get_player_move(self):
         if self._is_human:
             return self.get_human_move()
         else:
