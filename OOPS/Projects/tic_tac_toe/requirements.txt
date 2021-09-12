@@ -1,0 +1,15 @@
+Project: Tic-Tac-Toe Game
+Requirements
+ The game shall start by displaying a welcome message and an empty 3x3 board.
+ There will be two players: the user and the computer player.
+ The user will have the X marker.
+ The computer player will have the O marker.
+ The user will be prompted to enter his/her move with the format rowcolumn (e.g 1A) where:
+o Row can be 1, 2, or 3 (top to bottom)
+o Column can be A, B, or C (left to right).
+These values shall be displayed on the board as a reference.
+ If the user or the computer player selects a position that is already taken, a descriptive message should be displayed.
+ The updated board shall be displayed after entering or generating the move.
+ For a player to win the game there must be a full row, column, or diagonal with its corresponding marker.
+ The game ends when there is a tie (full board) or when the user or the computer player wins.
+ The program shall assume that the user input will be in a correct format.
