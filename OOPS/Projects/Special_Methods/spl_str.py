@@ -27,5 +27,5 @@ class Student:
             
 student = Student("12004385", "Sujeeth Kurapati", 26, 3.10) 
 
-print(student) #method overloading
+print(student) #operator overloading
 help(Student) #implementation of doc strings  
