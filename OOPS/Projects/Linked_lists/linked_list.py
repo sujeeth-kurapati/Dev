@@ -25,3 +25,13 @@ class Linkedlist:
             new_node.next = runner   
             previous.next = new_node
             
+    def print_list_items(self):
+        
+        if self.head is None:
+            print("Empty Linked List")
+        else:
+            runner = self.head
+            while runner is not None:
+                print(runner.value, end=" ")
+                runner = runner.next
+            print("\n")
