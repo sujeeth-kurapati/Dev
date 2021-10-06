@@ -54,3 +54,13 @@ class Linkedlist:
             return 0
         else:
             return 1 + self.count_nodes_recursive(node.next)
+        
+    def find_node(self, target_node):
+        runner = self.head
+        
+        while runner is not None:
+            if runner.value == target_node:
+                return True
+            runner = runner.next
+            
+        return False

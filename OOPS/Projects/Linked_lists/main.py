@@ -18,3 +18,6 @@ print(my_linkedlist.count_nodes())       #getting node count using iterative met
 print(my_linkedlist.count_nodes_rec())   #getting node count using recursive method
 my_linkedlist.insert_node(7)
 print(my_linkedlist.count_nodes_rec())
+
+print(my_linkedlist.find_node(2))
+print(my_linkedlist.find_node(9))
