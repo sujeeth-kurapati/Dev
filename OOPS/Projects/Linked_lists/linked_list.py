@@ -35,3 +35,22 @@ class Linkedlist:
                 print(runner.value, end=" ")
                 runner = runner.next
             print("\n")
+            
+    def count_nodes(self):
+        count = 0
+        runner = self.head
+        
+        while runner is not None:
+            count += 1
+            runner = runner.next
+        
+        return count
+    
+    def count_nodes_rec(self):
+        return self.count_nodes_recursive(self.head)
+    
+    def count_nodes_recursive(self, node):
+        if node is None:
+            return 0
+        else:
+            return 1 + self.count_nodes_recursive(node.next)
