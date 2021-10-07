@@ -64,3 +64,29 @@ class Linkedlist:
             runner = runner.next
             
         return False
+    
+    def delete_node(self, target_node):
+        
+        if self.head is None:
+            print("The list is empty!!")
+            return False
+        elif self.head.value == target_node:
+            self.head = self.head.next
+            print("Found the target, deleting it!")
+            return True
+        else:
+            previous = self.head
+            runner = self.head.next
+        
+            while (runner is not None) and (target_node > previous.value):
+
+                if runner.value == target_node:
+                    previous.next = runner.next
+                    print("Found the target, deleting it!")
+                    return True
+                
+                previous = runner
+                runner = runner.next
+            print("The value does not exist in the list")
+            return False
+            
