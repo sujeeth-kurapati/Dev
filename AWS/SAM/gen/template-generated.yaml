@@ -4,8 +4,37 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://sujeeth-sam-deployment/5a3fa0059ee5658f8b67a877102cf5bf
+      CodeUri: s3://sujeeth-sam-deployment/059c3cbda65986fa7ccc18d0d0263999
       Handler: app.lambda_handler
       Runtime: python3.7
       MemorySize: 128
       Timeout: 3
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /intro
+            Method: get
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: Table
+          REGION_NAME:
+            Ref: AWS::Region
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: Table
+    Metadata:
+      SamResourceId: HelloWorldFunction
+  Table:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: greetings
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+    Metadata:
+      SamResourceId: Table
