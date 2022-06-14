@@ -15,7 +15,7 @@ def partition(arr, start, end):
     
     return pp
             
-data = [5,5,4]
+data = [1,2,2,3,3,3,4]
 print("Unsorted Array")
 print(data)
 
