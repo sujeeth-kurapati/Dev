@@ -15,6 +15,9 @@ def swap_even(arr):
             even_index += 1
     return arr
 
+def spiral_matrix():
+    pass
+
 if __name__ == "__main__":
     # num = count_bits(12)
     # print(num)
