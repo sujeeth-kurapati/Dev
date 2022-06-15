@@ -1,5 +1,5 @@
 def lengthOfLongestSubstring(s: str) -> int:
-    lngst_str = 1 if len(s) > 0 else 0
+    # lngst_str = 1 if len(s) > 0 else 0
     # str_ary = [x for x in s.strip()]
     # for i in range(0, len(str_ary)-1):
     #     cnt_ary = []
@@ -20,17 +20,17 @@ def lengthOfLongestSubstring(s: str) -> int:
     mx = 0
     for index, item in enumerate(s):
         if item not in str_dict.keys():
-            str_dict[item] = index
             mx += 1
             # curr_mx = mx
         else:
             ln_ary.append(mx) 
-            mx = 1
+            mx = index - str_dict[item]
+        str_dict[item] = index
     bigst_num = max(ln_ary)
     return max(bigst_num, mx)
 
 
-str_lngt = lengthOfLongestSubstring('dvdf')
+str_lngt = lengthOfLongestSubstring('dvfd')
 print(str_lngt)
 
 
